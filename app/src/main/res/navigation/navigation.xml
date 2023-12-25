@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation">
+
+    <fragment
+        android:id="@+id/navi_home"
+        android:name="com.wildanarkan.latihanfragment.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navi_info"
+        android:name="com.wildanarkan.latihanfragment.InfoFragment"
+        android:label="Info"
+        tools:layout="@layout/fragment_info"
+        />
+
+    <fragment
+        android:id="@+id/navi_contact"
+        android:name="com.wildanarkan.latihanfragment.ContactFragment"
+        android:label="Contact"
+        tools:layout="@layout/fragment_contact"
+        />
+
+</navigation>

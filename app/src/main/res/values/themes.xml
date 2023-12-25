@@ -2,4 +2,26 @@
 <resources>
 
     <style name="Theme.LatihanFragment" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="BottomNavigation" parent="Theme.AppCompat.Light">
+        <item name="android:background">
+            @color/white
+        </item>
+
+        <item name="itemIconTint">
+            @color/purple_700
+        </item>
+
+        <item name="itemTextColor">
+            @color/purple_700
+        </item>
+
+<!--        <item name="itemTextAppearanceActive">-->
+<!--            @color/teal_200-->
+<!--        </item>-->
+
+<!--        <item name="itemTextAppearanceInactive">-->
+<!--            @color/gray-->
+<!--        </item>-->
+    </style>
 </resources>
