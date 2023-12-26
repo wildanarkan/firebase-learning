@@ -4,24 +4,15 @@
     <style name="Theme.LatihanFragment" parent="android:Theme.Material.Light.NoActionBar" />
 
     <style name="BottomNavigation" parent="Theme.AppCompat.Light">
-        <item name="android:background">
-            @color/white
-        </item>
+        <item name="android:background">@color/white</item>
 
-        <item name="itemIconTint">
-            @color/purple_700
-        </item>
+        <item name="itemIconTint">@color/btn_nav_color</item>
 
-        <item name="itemTextColor">
-            @color/purple_700
-        </item>
-
-<!--        <item name="itemTextAppearanceActive">-->
-<!--            @color/teal_200-->
-<!--        </item>-->
-
-<!--        <item name="itemTextAppearanceInactive">-->
-<!--            @color/gray-->
-<!--        </item>-->
+        <item name="itemTextAppearanceActive">@style/BottomNavigation.ActiveText</item>
     </style>
+
+    <style name="BottomNavigation.ActiveText">
+        <item name="android:textColor">#F44336</item> <!-- Ganti dengan warna yang diinginkan -->
+    </style>
+
 </resources>

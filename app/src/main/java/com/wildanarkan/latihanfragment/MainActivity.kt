@@ -41,7 +41,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
     private fun setUpNaviButton() {
         fm.beginTransaction().add(R.id.navi_content, fragHome).show(fragHome).commit()
         fm.beginTransaction().add(R.id.navi_content, fragInfo).hide(fragInfo).commit()
