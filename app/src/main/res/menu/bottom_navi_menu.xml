@@ -14,4 +14,9 @@
         android:title="Contact"
         android:id="@+id/navi_contact"
         android:icon="@drawable/ic_contact"/>
+
+    <item
+        android:title="Category"
+        android:id="@+id/navi_category"
+        android:icon="@drawable/ic_category"/>
 </menu>

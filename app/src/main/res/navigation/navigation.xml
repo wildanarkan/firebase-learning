@@ -24,4 +24,11 @@
         tools:layout="@layout/fragment_contact"
         />
 
+    <fragment
+        android:id="@+id/navi_category"
+        android:name="com.wildanarkan.latihanfragment.CategoryFragment"
+        android:label="Category"
+        tools:layout="@layout/fragment_category"
+        />
+
 </navigation>

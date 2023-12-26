@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
     private val fragHome: Fragment = HomeFragment()
     private val fragInfo: Fragment = InfoFragment()
     private val fragContact: Fragment = ContactFragment()
+    private val fragCategory: Fragment = CategoryFragment()
     private val fm: FragmentManager = supportFragmentManager
     private var active: Fragment = fragHome
     private lateinit var btn_navi_view : BottomNavigationView
@@ -45,6 +46,7 @@ class MainActivity : AppCompatActivity() {
         fm.beginTransaction().add(R.id.navi_content, fragHome).show(fragHome).commit()
         fm.beginTransaction().add(R.id.navi_content, fragInfo).hide(fragInfo).commit()
         fm.beginTransaction().add(R.id.navi_content, fragContact).hide(fragContact).commit()
+        fm.beginTransaction().add(R.id.navi_content, fragCategory).hide(fragCategory).commit()
 
         fm.beginTransaction().commit()
 
@@ -62,6 +64,9 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.navi_contact -> {
                     callFrag(2, fragContact)
+                }
+                R.id.navi_category -> {
+                    callFrag(3, fragCategory)
                 }
             }
             false
