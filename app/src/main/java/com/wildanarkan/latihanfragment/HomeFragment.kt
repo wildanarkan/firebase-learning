@@ -38,7 +38,7 @@ class HomeFragment : Fragment() {
         adapter = MyAdapter(newsArrayList)
         recyclerView.adapter = adapter
 
-        val layoutManager2 = GridLayoutManager(context, 4)
+        val layoutManager2 = GridLayoutManager(context, 3)
         recyclerView2 = view.findViewById(R.id.recycler_view2)
         recyclerView2.layoutManager = layoutManager2
         recyclerView2.setHasFixedSize(true)

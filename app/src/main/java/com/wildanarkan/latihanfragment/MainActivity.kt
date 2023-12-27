@@ -59,13 +59,13 @@ class MainActivity : AppCompatActivity() {
                     callFrag(0, fragHome)
                 }
                 R.id.navi_info -> {
-                    callFrag(1, fragInfo)
+                    callFrag(2, fragInfo)
                 }
                 R.id.navi_contact -> {
-                    callFrag(2, fragContact)
+                    callFrag(3, fragContact)
                 }
                 R.id.navi_category -> {
-                    callFrag(3, fragCategory)
+                    callFrag(1, fragCategory)
                 }
             }
             false
