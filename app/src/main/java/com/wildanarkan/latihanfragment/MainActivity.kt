@@ -16,7 +16,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.replace
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.wildanarkan.latihanfragment.adapter.UserAdapter
+import com.wildanarkan.latihanfragment.data.entity.User
 import com.wildanarkan.latihanfragment.databinding.ActivityMainBinding
 import com.wildanarkan.latihanfragment.ui.theme.LatihanFragmentTheme
 
@@ -26,11 +30,15 @@ class MainActivity : AppCompatActivity() {
     private val fragInfo: Fragment = InfoFragment()
     private val fragContact: Fragment = ContactFragment()
     private val fragCategory: Fragment = CategoryFragment()
+    private val fragCrud: Fragment = CRUDFragment()
     private val fm: FragmentManager = supportFragmentManager
     private var active: Fragment = fragHome
+
     private lateinit var btn_navi_view : BottomNavigationView
     private lateinit var menu: Menu
     private lateinit var menuItem: MenuItem
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,6 +47,8 @@ class MainActivity : AppCompatActivity() {
         btn_navi_view = findViewById(R.id.btn_navi_view)
         setUpNaviButton()
 
+        //init crud
+
     }
 
     private fun setUpNaviButton() {
@@ -46,6 +56,7 @@ class MainActivity : AppCompatActivity() {
         fm.beginTransaction().add(R.id.navi_content, fragInfo).hide(fragInfo).commit()
         fm.beginTransaction().add(R.id.navi_content, fragContact).hide(fragContact).commit()
         fm.beginTransaction().add(R.id.navi_content, fragCategory).hide(fragCategory).commit()
+        fm.beginTransaction().add(R.id.navi_content, fragCrud).hide(fragCrud).commit()
 
         fm.beginTransaction().commit()
 
@@ -66,6 +77,9 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.navi_category -> {
                     callFrag(1, fragCategory)
+                }
+                R.id.navi_crud -> {
+                    callFrag(4, fragCrud)
                 }
             }
             false

@@ -24,4 +24,11 @@
     <string name="head_8">Barcelona church offers open-air space for Ramadan</string>
     <string name="head_9">Trillions of cicadas set to emerge in the US, here\'s why</string>
     <string name="head_10">Homemaker, economist: Candidates from all walks of life in Bengal assembly</string>
+
+    <!--CRUD-->
+    <string-array name="items_option">
+        <item>Update</item>
+        <item>Delete</item>
+        <item>Cancel</item>
+    </string-array>
 </resources>

@@ -31,4 +31,11 @@
         tools:layout="@layout/fragment_category"
         />
 
+    <fragment
+        android:id="@+id/navi_crud"
+        android:name="com.wildanarkan.latihanfragment.CRUDFragment"
+        android:label="Category"
+        tools:layout="@layout/fragment_c_r_u_d"
+        />
+
 </navigation>

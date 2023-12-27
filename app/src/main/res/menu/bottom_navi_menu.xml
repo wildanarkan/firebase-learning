@@ -20,5 +20,10 @@
         android:id="@+id/navi_contact"
         android:icon="@drawable/ic_contact"/>
 
+    <item
+        android:title="Crud"
+        android:id="@+id/navi_crud"
+        android:icon="@drawable/ic_crud"/>
+
 
 </menu>
