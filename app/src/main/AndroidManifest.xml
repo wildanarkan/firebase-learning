@@ -16,9 +16,6 @@
             android:name=".UploadActivity"
             android:exported="false" />
         <activity
-            android:name=".CrudActivity"
-            android:exported="false" />
-        <activity
             android:name=".EditorActivity"
             android:exported="false" />
         <activity

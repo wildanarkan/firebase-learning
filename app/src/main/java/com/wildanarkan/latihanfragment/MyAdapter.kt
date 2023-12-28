@@ -7,10 +7,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.imageview.ShapeableImageView
 
-class MyAdapter(private val newslist: ArrayList<News>) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
+class MyAdapter(private val newslist: ArrayList<ProductData>) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.list,
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.list_product,
             parent,false)
         return  MyViewHolder(itemView)
     }
@@ -21,13 +21,19 @@ class MyAdapter(private val newslist: ArrayList<News>) : RecyclerView.Adapter<My
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = newslist[position]
-        holder.titleImage.setImageResource(currentItem.titleImage)
-        holder.tvHeading.text = currentItem.heading
+        holder.tvOwner.text = currentItem.owner
+        holder.tvBrand.text = currentItem.brand
+        holder.tvProduct.text = currentItem.product
+        holder.tvCodeProduct.text = currentItem.codeProduct
+        holder.tvPrice.text = currentItem.price
     }
 
     class MyViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
-        val titleImage : ShapeableImageView = itemView.findViewById(R.id.title_image)
-        val tvHeading : TextView = itemView.findViewById(R.id.tvHeading)
+        val tvOwner : TextView = itemView.findViewById(R.id.tv_owner)
+        val tvBrand : TextView = itemView.findViewById(R.id.tv_brand)
+        val tvProduct : TextView = itemView.findViewById(R.id.tv_product)
+        val tvCodeProduct : TextView = itemView.findViewById(R.id.tv_code_product)
+        val tvPrice : TextView = itemView.findViewById(R.id.tv_price)
 
 
     }
