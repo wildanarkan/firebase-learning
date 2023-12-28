@@ -12,7 +12,7 @@ class UserAdapter(var list: List<User>): RecyclerView.Adapter<UserAdapter.ViewHo
 
     private lateinit var dialog: Dialog
 
-    fun  setDialog(dialog: Dialog){
+    fun setDialog(dialog: Dialog){
         this.dialog = dialog
     }
     interface Dialog{

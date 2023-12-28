@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.wildanarkan.latihanfragment" />
+                  <option name="mobileSdkAppId" value="1:369546729368:android:c5943571bd0efa94987ded" />
+                  <option name="projectId" value="fluent-edition-406913" />
+                  <option name="projectNumber" value="369546729368" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

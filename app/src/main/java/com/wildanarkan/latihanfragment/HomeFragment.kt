@@ -1,10 +1,12 @@
 package com.wildanarkan.latihanfragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -15,6 +17,7 @@ class HomeFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var recyclerView2: RecyclerView
     private lateinit var newsArrayList: ArrayList<News>
+    private lateinit var mainUpload: Button
 
     lateinit var imageId: Array<Int>
     lateinit var heading: Array<String>
@@ -31,6 +34,8 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         dataInitialize()
+
+        // Layout View
         val layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
         recyclerView = view.findViewById(R.id.recycler_view1)
         recyclerView.layoutManager = layoutManager
@@ -43,6 +48,14 @@ class HomeFragment : Fragment() {
         recyclerView2.layoutManager = layoutManager2
         recyclerView2.setHasFixedSize(true)
         recyclerView2.adapter = adapter
+
+        mainUpload = view.findViewById(R.id.mainUpload)
+        mainUpload.setOnClickListener{
+            val intent = Intent(view.context, UploadActivity::class.java)
+            startActivity(intent)
+            requireActivity().finish()
+        }
+
 
     }
 
@@ -178,5 +191,6 @@ class HomeFragment : Fragment() {
             val news = News(imageId[i], heading[i])
             newsArrayList.add(news)
         }
+
     }
 }
