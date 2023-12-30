@@ -2,15 +2,19 @@ package com.wildanarkan.latihanfragment
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.FirebaseException
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -22,9 +26,10 @@ class HomeFragment : Fragment() {
     private lateinit var adapter: MyAdapter
     private lateinit var recyclerView: RecyclerView
     private lateinit var recyclerView2: RecyclerView
-    private lateinit var productArrayList: ArrayList<ProductData>
-    private lateinit var mainUpload: Button
+    private var productArrayList = mutableListOf<ProductData>()
+    private lateinit var mainUpload: FloatingActionButton
     private lateinit var databaseReference: DatabaseReference
+    private lateinit var btnDelete: ImageView
 
     lateinit var imageId: Array<Int>
     lateinit var heading: Array<String>
@@ -56,14 +61,16 @@ class HomeFragment : Fragment() {
 //        recyclerView2.setHasFixedSize(true)
 //        recyclerView2.adapter = adapter
 
+
         recyclerView = view.findViewById(R.id.rcv_product)
         recyclerView.layoutManager = LinearLayoutManager(context)
 
-        productArrayList = arrayListOf()
+        initAdapter()
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Product Information")
         databaseReference.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
+                productArrayList.clear()
                 if (snapshot.exists()){
                     for(dataSnapshot in snapshot.children){
                         val productData = dataSnapshot.getValue(ProductData::class.java)
@@ -71,8 +78,9 @@ class HomeFragment : Fragment() {
                             productArrayList.add(productData!!)
                         }
                     }
-                    recyclerView.adapter = MyAdapter(productArrayList)
                 }
+                Log.e("aim", "data => $productArrayList")
+                adapter.submitData(productArrayList)
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -88,6 +96,20 @@ class HomeFragment : Fragment() {
         }
 
 
+    }
+
+    private fun initAdapter(){
+        adapter = MyAdapter(
+            onDelete = {
+                try {
+                    databaseReference.child(it).removeValue()
+                } catch(e: FirebaseException) {
+                    Log.e("wildan", it)
+                }
+            }
+        )
+
+        recyclerView.adapter = adapter
     }
 
 //    private fun dataInitialize() {

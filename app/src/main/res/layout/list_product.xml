@@ -15,6 +15,10 @@
         android:orientation="vertical"
         android:padding="10dp">
 
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
         <TextView
             android:id="@+id/tv_owner"
             android:layout_width="match_parent"
@@ -22,6 +26,26 @@
             android:textColor="@color/black"
             android:textSize="20sp"
             android:text="Owner :"/>
+
+            <ImageView
+                android:id="@+id/btn_update"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_edit"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="40dp"/>
+
+            <ImageView
+                android:id="@+id/btn_delete"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_delete"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="5dp"/>
+
+        </RelativeLayout>
+
+
         <TextView
             android:id="@+id/tv_brand"
             android:layout_width="match_parent"

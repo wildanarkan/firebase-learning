@@ -28,25 +28,35 @@
         />
 
 
-    <Button
-        android:id="@+id/mainUpload"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="100dp"
-        android:layout_marginEnd="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/search_product"
-        android:text="ADD"/>
+<!--    <Button-->
+<!--        android:id="@+id/am"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_marginStart="100dp"-->
+<!--        android:layout_marginEnd="100dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/search_product"-->
+<!--        android:text="ADD"/>-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcv_product"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:listitem="@layout/list_product"
-        app:layout_constraintTop_toBottomOf="@id/mainUpload"/>
+        app:layout_constraintTop_toBottomOf="@id/btn_search"/>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/mainUpload"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="10dp"
+        android:src="@drawable/ic_add"
+        android:contentDescription="fab button"
+        />
 <!--    <ScrollView-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="match_parent"-->
